@@ -4,7 +4,7 @@ const express = require('express'),
 // port = process.env.PORT || 3001;
 port = process.env.PORT || 3004; // AWS
 var exphbs = require('express-handlebars');
-
+var fs = require('fs');
 var https = require('https');
 
 var options = {
