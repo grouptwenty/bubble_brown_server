@@ -9,7 +9,7 @@ var https = require('https');
 
 var options = {
     key: fs.readFileSync('../server-key.pem'),
-    cert: fs.readFileSync('../certs/server-csr.pem'),
+    cert: fs.readFileSync('../server-csr.pem'),
 };
 
 
