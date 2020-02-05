@@ -463,9 +463,13 @@ Task.updateCustomerByCode = function updateCustomerByCode(data) {
             + "`about_code` = '" + data.about_code + "',"
             + "`customer_name`= '" + data.customer_name + "',"
             + "`customer_id`= '" + data.customer_id + "',"
-            + "`customer_email`= '" + data.customer_email + "',"
-            + "`customer_tel`= '" + data.customer_tel + "',"
-            + "`customer_image` = '" + data.customer_image + "'"
+        if (data.customer_email != '' && data.customer_email != undefined) {
+            str += "`customer_email`= '" + data.customer_email + "',"
+        }
+        if (data.customer_tel != '' && data.customer_tel != undefined) {
+            str += "`customer_tel`= '" + data.customer_tel + "',"
+        }
+        + "`customer_image` = '" + data.customer_image + "'"
             + " WHERE customer_code = '" + data.customer_code + "'";
 
 
