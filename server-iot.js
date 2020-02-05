@@ -5,7 +5,12 @@ const express = require('express'),
 port = process.env.PORT || 3004; // AWS
 var exphbs = require('express-handlebars');
 
+var https = require('https');
 
+var options = {
+    key: fs.readFileSync('../server-key.pem'),
+    cert: fs.readFileSync('../certs/server-csr.pem'),
+};
 
 
 var cors = require('cors');
@@ -40,10 +45,12 @@ app.use((req, res, next) => {
 });
 
 
-app.listen(3004, () => {
-  console.log('API Start server at port 3004.')
-})
-
+// app.listen(3004, () => {
+//   console.log('API Start server at port 3004.')
+// })
+var server = https.createServer(options, app).listen(port, function(){
+  console.log("Express server listening on port " + port);
+});
 var appRouteAbout = require('./routes/appRouteAbout');
 appRouteAbout(app); //Admin the route
 
