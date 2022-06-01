@@ -36,7 +36,7 @@
     "openssl": "^1.1.0",
     "pusher": "^3.0.0",
     "pusher-js": "^5.0.3",
-    "sharp": "^0.23.0",
+    "sharp": "^0.30.5",
     "uuid": "^3.3.3"
   },
   "devDependencies": {
